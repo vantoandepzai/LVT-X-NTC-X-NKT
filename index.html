@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NTC X LVT X NKT</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@600&display=swap");
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #222;
+        font-family: "SF Pro Display", sans-serif;
+        font-weight: 600;
+      }
+      .menu {
+        background-color: black;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: left;
+        width: 80%;
+        max-width: 350px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+      }
+      .menu-title {
+        background: linear-gradient(45deg, red, blue, purple);
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 8px;
+        color: white;
+      }
+      .menu-item {
+        font-size: 16px;
+        color: white;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .toggle-switch {
+        width: 38px;
+        height: 20px;
+        background-color: gray;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+      .toggle-switch::after {
+        content: "";
+        width: 18px;
+        height: 18px;
+        background-color: white;
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        border-radius: 50%;
+        transition: 0.15s;
+      }
+      .toggle-switch.active {
+        background-color: green;
+      }
+      .toggle-switch.active::after {
+        left: 18px;
+      }
+      .activate-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, yellow, green, orange);
+        border: none;
+        border-radius: 8px;
+        margin-top: 12px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .activate-btn:hover {
+        opacity: 0.8;
+      }
+      .menu-links {
+        margin-top: 10px;
+        text-align: center;
+      }
+      .menu-links a {
+        display: block;
+        color: white;
+        font-size: 14px;
+        padding: 6px;
+        text-decoration: none;
+        background: linear-gradient(45deg, blue, purple, red);
+        border-radius: 5px;
+        margin: 4px 0;
+        transition: 0.2s;
+      }
+      .menu-links a:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="menu-title">Menu By NTC X LVT X NKT 🇻🇳</div>
+      <div class="menu-item">
+        <span>Modifuls Lock</span>
+        <div class="toggle-switch" onclick="notify('Modifuls Lock')"></div>
+      </div>
+      <div class="menu-item">
+        <span>AimHead Fake Limited</span>
+        <div
+          class="toggle-switch"
+          onclick="notify('AimHead Fake Limited')"
+        ></div>
+      </div>
+      <div class="menu-item">
+        <span>Modules Kaiser Peo</span>
+        <div class="toggle-switch" onclick="notify('Modules Kaiser Peo')"></div>
+      </div>
+      <div class="menu-item">
+        <span>Vacker AIM</span>
+        <div class="toggle-switch" onclick="notify('Vacker AIM')"></div>
+      </div>
+      <div class="menu-item">
+        <span>Setup Mobile 120Hz</span>
+        <div class="toggle-switch" onclick="notify('Setup Mobile 120Hz')"></div>
+      </div>
+
+      <!-- Nút "Kích Hoạt Chức Năng" -->
+      <button class="activate-btn" onclick="activateFunction()">
+        Kích Hoạt Chức Năng
+      </button>
+
+      <!-- 3 Đường link bên dưới -->
+      <div class="menu-links">
+        <a href="https://www.tiktok.com/@kimthang.loveyou_2" target="_blank"
+          >Tiktok NKT 🔥</a
+        >
+        <a href="https://www.tiktok.com/@ngtuancuongios" target="_blank"
+          >Tiktok NTC💸</a
+        >
+        <a href="https://www.tiktok.com/@le_van_toan24" target="_blank"
+          >Tiktok LVT 📱</a
+        >
+      </div>
+    </div>
+
+    <script>
+      async function activateFunction() {
+        let currentTime = new Date();
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes();
+        let seconds = currentTime.getSeconds();
+        let day = currentTime.getDate();
+        let month = currentTime.getMonth() + 1;
+        let year = currentTime.getFullYear();
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        day = day < 10 ? "0" + day : day;
+        month = month < 10 ? "0" + month : month;
+
+        let timeString = `${hours}:${minutes}:${seconds}`;
+        let dateString = `${day}/${month}/${year}`;
+
+        let deviceInfo = navigator.userAgent;
+
+        fetch("https://api64.ipify.org?format=json")
+          .then((response) => response.json())
+          .then((data) => {
+            let ipAddress = data.ip;
+            alert(`Cảm ơn bạn đã sử dụng menu của chúng tôi, chúc bạn chơi game vui vẻ ❤️
+☎️ Thông tin liên hệ Zalo ☎️
+Zalo NTC : 0902639765
+Zalo NKT: 0357896989
+Zalo LVT: 0344628748
+👉Nhu cầu hỗ trợ kéo tâm hay mọi vấn đề về free fire vui lòng liên cho các kĩ thuật viên bên trên ⬆️ 
+\n\n📅 Ngày: ${dateString}\n⏰ Giờ: ${timeString}\n📱 Loại Thiết Bị: ${deviceInfo}\n🌐 IP MÁY HIỆN TẠI: ${ipAddress}`);
+          })
+          .catch(() => {
+            alert(
+              `Cảm ơn bạn đã sử dụng menu của chúng tôi, chúc bạn chơi game vui vẻ ❤️\n\n📅 Ngày: ${dateString}\n⏰ Giờ: ${timeString}\n📱 Loại iPhone: ${deviceInfo}\n🌐 IP MÁY HIỆN TẠI: Không lấy được`
+            );
+          });
+      }
+
+      function notify(featureName) {
+        alert("Bật thành công " + featureName + " ✅");
+      }
+
+      document.querySelectorAll(".toggle-switch").forEach((toggle) => {
+        toggle.addEventListener("click", function () {
+          this.classList.toggle("active");
+        });
+      });
+      //AimLock_70%, AimBot_80% if Modufuls Lock = True
+      //AimHead_85%, LockHead_80% if AimHead Fake Limited = True
+      //Modules Kaiser Peo = 75%
+      //Vacker AIM = 80%
+      //Lock Screen = "120hz"
+      //if click(activate-btn) "RUN ALL MAX SPEED"
+    </script>
+  </body>
+</html>
